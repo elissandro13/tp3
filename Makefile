@@ -4,8 +4,8 @@ SRC = src
 OBJ = obj
 INC = include
 BIN = bin
-OBJS = $(OBJ)/vertice.o  $(OBJ)/main.o $(OBJ)/ordenacao.o $(OBJ)/heap.o $(OBJ)/aresta.o
-HDRS = $(INC)/vertice.hpp $(INC)/ordenacao.hpp $(INC)/heap.hpp $(INC)/aresta.hpp
+OBJS = $(OBJ)/matrix.o  $(OBJ)/main.o $(OBJ)/segTree.o $(OBJ)/util.o
+HDRS = $(INC)/matrix.hpp $(INC)/segTree.hpp $(INC)/util.hpp
 CFLAGS = -Wall -c -g -I$(INC)
 
 EXE = $(BIN)/main
@@ -15,31 +15,29 @@ EXE = $(BIN)/main
 
 all: $(BIN)/tp3.out
 
-debug: $(BIN)/tp2_teste.out
+debug: $(BIN)/tp3_teste.out
 	
 
 #colocar -pg para debugar
 
-$(BIN)/tp2_teste.out: $(OBJS)
-	$(CC) -o $(BIN)/tp2_teste.out $(OBJS) $(LIBS)
+$(BIN)/tp3_teste.out: $(OBJS)
+	$(CC) -o $(BIN)/tp3_teste.out $(OBJS) $(LIBS)
 
-$(BIN)/tp2.out: $(OBJS)
-	$(CC) -o $(BIN)/tp2.out $(OBJS) $(LIBS)
+$(BIN)/tp3.out: $(OBJS)
+	$(CC) -o $(BIN)/tp3.out $(OBJS) $(LIBS)
 
 $(OBJ)/main.o: $(HDRS) $(SRC)/main.cpp
 	$(CC) $(CFLAGS) -o $(OBJ)/main.o $(SRC)/main.cpp
 
-$(OBJ)/vertice.o: $(HDRS) $(SRC)/vertice.cpp
-	$(CC) $(CFLAGS) -o $(OBJ)/vertice.o $(SRC)/vertice.cpp
+$(OBJ)/matrix.o: $(HDRS) $(SRC)/matrix.cpp
+	$(CC) $(CFLAGS) -o $(OBJ)/matrix.o $(SRC)/matrix.cpp
 
-$(OBJ)/ordenacao.o: $(HDRS) $(SRC)/ordenacao.cpp
-	$(CC) $(CFLAGS) -o $(OBJ)/ordenacao.o $(SRC)/ordenacao.cpp
+$(OBJ)/segTree.o: $(HDRS) $(SRC)/segTree.cpp
+	$(CC) $(CFLAGS) -o $(OBJ)/segTree.o $(SRC)/segTree.cpp
 
-$(OBJ)/heap.o: $(HDRS) $(SRC)/heap.cpp
-	$(CC) $(CFLAGS) -o $(OBJ)/heap.o $(SRC)/heap.cpp
+$(OBJ)/util.o: $(HDRS) $(SRC)/util.cpp
+	$(CC) $(CFLAGS) -o $(OBJ)/util.o $(SRC)/util.cpp
 
-$(OBJ)/aresta.o: $(HDRS) $(SRC)/aresta.cpp
-	$(CC) $(CFLAGS) -o $(OBJ)/aresta.o $(SRC)/aresta.cpp	
 
 	
 clean:

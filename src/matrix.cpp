@@ -1,4 +1,6 @@
-#include "../include/matrix.hpp"
+#include "../include/segTree.hpp"
+#include <iostream>
+
 
 
 
@@ -12,7 +14,7 @@ Matrix::Matrix() {
     this->m22 = 1;
 }
 
-Matrix::Matrix(int a, int b, int c, int d) {
+Matrix::Matrix(unsigned long int a, unsigned long int b, unsigned long int c, unsigned long int d) {
 
     this->m11 = a;
     this->m12 = b;
@@ -22,15 +24,7 @@ Matrix::Matrix(int a, int b, int c, int d) {
 }
 
 
-Matrix Matrix::multiplicaMatrix(Matrix a, Matrix b) {
+void Matrix::imprimeMatrix() {
 
-    using long int resto = 100000000;
-
-    return { (a.m11 * b.m11 + a.m12 * b.m21) % resto,
-             (a.m11 * b.m12 + a.m12 * b.m22) % resto,
-             (a.m21 * b.m11 + a.m22 * b.m21) % resto,
-             (a.m21 * b.m12 + a.m22 * b.m22) % resto
-
-    };
-
-}
+    std::cout << m11 << " " << m12 << std::endl << m21 << " " << m22 << std::endl;
+};

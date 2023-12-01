@@ -1,16 +1,22 @@
-#ifndef ARESTA_HPP
-#define ARESTA_HPP
+#ifndef MATRIX_HPP
+#define MATRIX_HPP
+
+struct Vetor {
+    int x;
+    int y;
+};
+
 
 class Matrix {
 
     public:
-        int m11, m12, m21, m22;
-    
-    Matrix();
+        unsigned long int m11, m12, m21, m22;
 
-    Matrix(int a, int b, int c, int d);
+        Matrix();
 
-    Matrix multiplicaMatrix(Matrix a, Matrix b);
+        Matrix(unsigned long int a, unsigned long int b, unsigned long int c, unsigned long int d);
+
+        void imprimeMatrix();
 
 
 };
