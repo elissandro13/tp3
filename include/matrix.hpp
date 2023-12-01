@@ -8,6 +8,10 @@ class Matrix {
     
     Matrix();
 
+    Matrix(int a, int b, int c, int d);
+
+    Matrix multiplicaMatrix(Matrix a, Matrix b);
+
 
 };
 
