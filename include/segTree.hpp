@@ -15,6 +15,8 @@ class SegTree {
 
         SegTree(int n);
 
+        ~SegTree();
+
         Matrix * v;
 
         Matrix * seg;

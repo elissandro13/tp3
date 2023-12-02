@@ -17,12 +17,12 @@ Matrix multiplicaMatrix(Matrix a, Matrix b) {
 
 }
 
-Vetor multiplicaMatrixVetor(Matrix m, int x, int y) {
+Vetor multiplicaMatrixVetor(Matrix m, unsigned long int x, unsigned long int y) {
 
     unsigned long int resto = 100000000;
 
-    int a = (m.m11 * x + m.m12 * y) % resto;
-    int b = (m.m21 * x + m.m22 * y) % resto;
+    unsigned long int a = (m.m11 * x + m.m12 * y) % resto;
+    unsigned long int b = (m.m21 * x + m.m22 * y) % resto;
 
     return { a, b };
 

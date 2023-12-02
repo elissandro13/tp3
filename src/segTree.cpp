@@ -1,5 +1,6 @@
 #include "../include/segTree.hpp"
 #include "../include/util.hpp"
+#include <iostream>
 
 
 
@@ -31,7 +32,7 @@ Matrix SegTree::controiArvore(int pos, int incio, int fim) {
 
 Matrix SegTree::buscaArvore(int a, int b, int pos, int inicio, int fim){
 
-    if(b < inicio || fim < a) return {0, 0, 0, 0};
+    if(b < inicio || fim < a) return {1, 0, 1, 0};
 
     if(a <= inicio && fim <= b) return seg[pos];
 
@@ -48,7 +49,9 @@ Matrix SegTree::atualiza(int i, Matrix x, int pos, int inicio, int fim) {
     if(i < inicio || fim < i) return seg[pos];
     if(fim == inicio) {
         // lembnrar de fazer a sobrecarga do operador
+        // tentar imprimir matriz aqui para verificar
         seg[pos] = x;
+        //std::cout << "atualizazndo m na pos " << pos << std::endl;
         return seg[pos];
     }
     int meio = (inicio + fim)/2;
@@ -58,6 +61,11 @@ Matrix SegTree::atualiza(int i, Matrix x, int pos, int inicio, int fim) {
 
 
 };
+
+SegTree::~SegTree() {
+    delete[] v;
+    delete[] seg;
+}
 
 //atualiza(i, x, 1, 0, n-1);
 

@@ -2,8 +2,8 @@
 #define MATRIX_HPP
 
 struct Vetor {
-    int x;
-    int y;
+    unsigned long int x;
+    unsigned long int y;
 };
 
 

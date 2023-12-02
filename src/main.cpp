@@ -14,6 +14,30 @@ using std::endl;
 
 int main() {
 
+    /*
+    Matrix k = {1,2,3,4};
+    Matrix po[3];
+
+    po[2] = k;
+    po[2].imprimeMatrix();
+
+    return 0;
+
+
+
+    Matrix xxx = multiplicaMatrix(k,po);
+
+    xxx.imprimeMatrix();
+    cout << endl;
+
+    k = po;
+
+    k.imprimeMatrix();
+    cout <<  endl;
+
+    Vetor vet = multiplicaMatrixVetor(k, 15, 7);
+    cout <<  vet.x << " " << vet.y << endl; */
+
     int n, q;
 
     char c;
@@ -40,8 +64,11 @@ int main() {
             cin >> m11 >> m12 >> m21 >> m22;
             Matrix tmp = {m11, m12, m21, m22};
             segTree->atualiza(instante, tmp, 1, 0, n-1);
+           //segTree->v[instante] = tmp;
 
         } else if(c == 'q') {
+
+            //segTree->controiArvore(1, 0, n-1);
             cin >> inicio >> fim >> x >> y;
 
             Matrix tmp = segTree->buscaArvore(inicio, fim,1, 0, n-1);
@@ -50,6 +77,16 @@ int main() {
 
         }
     }
+
+
+//     for (int i = 0; i <= 7; ++i) {
+//
+//        segTree->seg[i].imprimeMatrix();
+//        cout << endl;
+//
+//    }
+
+     delete segTree;
 
     return 0; 
 }

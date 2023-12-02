@@ -10,7 +10,7 @@
 
     Matrix multiplicaMatrix(Matrix a, Matrix b);
 
-    Vetor multiplicaMatrixVetor(Matrix a, int x, int y);
+    Vetor multiplicaMatrixVetor(Matrix a, unsigned long int x, unsigned long int y);
 
 
 
